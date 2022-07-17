@@ -16,9 +16,12 @@ function App() {
   
 
   const startOperation = () => {
-    console.log(
-      first, second, third
-    )
+    const arr = [first, second, third]
+    const filtered = arr.filter((obj) => (obj.isChecked))
+    const result = filtered.reduce(function(accumulator, currentValue) {
+      return accumulator + parseInt(currentValue.value);
+    }, 0);
+    console.log(result)
   }
 
   return (
