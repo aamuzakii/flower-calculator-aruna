@@ -7,7 +7,7 @@ interface Props {
 export const Result: React.FC<Props> = ({ value }) => {
   return (
     <>
-      <p data-testid="result-fragment" >{value}</p>
+      <p data-testid="result-fragment" >Hasil: {value}</p>
     </>
   )
 }

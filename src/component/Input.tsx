@@ -27,7 +27,7 @@ export const Input: React.FC<Props> = ({ setVal, val }) => {
   }
 
   return (
-    <div style={{ display: 'flex' }} >
+    <div style={{ display: 'flex', alignItems: 'center' }} >
       <input
         type="number"
         placeholder="Input"
