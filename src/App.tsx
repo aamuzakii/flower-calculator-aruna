@@ -16,26 +16,21 @@ function App() {
 
   const startOperation = (type: MathOperation) => {
     const arr = [first, second, third]
-    const filteredObjects = arr.filter((obj) => (obj.isChecked))
-    let result
+    const filteredObjects = arr.filter( obj => obj.isChecked)
 
-    const flatten = filteredObjects.map((obj) => parseInt(obj.value))
+    const flatten = filteredObjects.map( obj => parseInt(obj.value))
 
     if (flatten.length <= 1) return alert('Please select two numbers')
-    result = flatten.reduce(function(accumulator, currentValue) {
+    const result = flatten.reduce(function(accumulator, currentValue) {
       switch (type) {
         case 'sum':
           return accumulator + currentValue;
-          break
         case 'subtract':
           return accumulator - currentValue;
-          break
         case 'multiply':
           return accumulator * currentValue;
-          break
         case 'divide':
           return accumulator / currentValue;
-          break
         default:
           return 0;
       }
