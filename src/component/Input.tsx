@@ -1,18 +1,9 @@
-// create functional component Input
-
 import React, { useRef, useState } from 'react';
-import { NumberObject } from '../model/models';
+import { NumberInterface } from '../interface/NumberInterface';
 
 interface Props {
-  setVal: React.Dispatch<React.SetStateAction<NumberObject>>;
-  val: NumberObject
-}
-
-function toggleTodo(todo: NumberObject) {
-  return {
-    value : todo.value,
-    isChecked: todo.isChecked
-  }
+  setVal: React.Dispatch<React.SetStateAction<NumberInterface>>;
+  val: NumberInterface
 }
 
 export const Input: React.FC<Props> = ({ setVal, val }) => {

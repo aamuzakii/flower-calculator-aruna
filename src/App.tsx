@@ -3,15 +3,13 @@ import './App.css';
 import { Input } from './component/Input';
 import { Operation } from './component/Operation';
 import { Result } from './component/Result';
-import { NumberObject } from './model/models';
+import { NumberInterface } from './interface/NumberInterface';
 
 function App() {
 
-  // const [val, setVal] = React.useState<Array<NumberObject>>([]);
-
-  const [first, setfirst] = useState<NumberObject>({value: '', isChecked: false})
-  const [second, setsecond] = useState<NumberObject>({value: '', isChecked: false})
-  const [third, setthird] = useState<NumberObject>({value: '', isChecked: false})
+  const [first, setfirst] = useState<NumberInterface>({value: '', isChecked: false})
+  const [second, setsecond] = useState<NumberInterface>({value: '', isChecked: false})
+  const [third, setthird] = useState<NumberInterface>({value: '', isChecked: false})
   const [result, setResult] = useState<number>(0)
   
 

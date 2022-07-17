@@ -1,4 +1,4 @@
-export interface NumberObject {
+export interface NumberInterface {
   value: string;
   isChecked: boolean;
 }

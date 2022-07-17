@@ -1,15 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import { SetStateAction } from 'react';
-import { NumberObject } from '../model/models';
+import { NumberInterface  } from '../interface/NumberInterface';
 import { Input } from './Input';
 
 test('Should reject non numeric input', () => {
-  const object: NumberObject = {
+  const object: NumberInterface = {
     value: 'non numeric',
     isChecked: true
   }
 
-  render(<Input setVal={function (value: SetStateAction<NumberObject>): void {} } val={object}  />);
+  render(<Input setVal={function (value: SetStateAction<NumberInterface>): void {} } val={object}  />);
 
   const inputElement = screen.queryByRole('number-input')
   const valueOfInput = inputElement?.closest('input')?.value
@@ -19,12 +19,12 @@ test('Should reject non numeric input', () => {
 })
 
 test('Should accept numeric input', () => {
-  const object: NumberObject = {
+  const object: NumberInterface = {
     value: '1',
     isChecked: true
   }
 
-  render(<Input setVal={function (value: SetStateAction<NumberObject>): void {} } val={object}  />);
+  render(<Input setVal={function (value: SetStateAction<NumberInterface>): void {} } val={object}  />);
 
   const inputElement = screen.queryByRole('number-input')
   const valueOfInput = inputElement?.closest('input')?.value
