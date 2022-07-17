@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const Input: React.FC<Props> = ({ setVal, val }) => {
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState<boolean>(false);
 
   const inputRef = useRef<HTMLInputElement>(null);
 

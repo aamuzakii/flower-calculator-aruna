@@ -20,7 +20,7 @@ function App() {
 
     const flatten: number[] = filteredObjects.map( (obj: NumberInterface) => parseInt(obj.value))
 
-    if (flatten.length <= 1) return alert('Please select two numbers')
+    if (flatten.length <= 1) return alert('Please select at least two numbers')
     if (flatten.includes(NaN)) return alert('Please fill all checked fields')
     const result = flatten.reduce(function(accumulator, currentValue) {
       switch (type) {
