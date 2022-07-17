@@ -46,6 +46,7 @@ function App() {
       <Input setVal={setsecond} val={second}  />
       <Input setVal={setthird} val={third}  />
       <Operation startOperation={startOperation} />
+      <hr />
       <Result value={result} />
     </div>
   );
