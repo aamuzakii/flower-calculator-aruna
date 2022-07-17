@@ -9,6 +9,13 @@ interface Props {
 export const Input: React.FC<Props> = ({ setVal, val }) => {
   const [checked, setChecked] = useState<boolean>(false);
 
+  React.useEffect(() => {
+    setVal({
+      value: val.value,
+      isChecked: checked
+    })
+  }, [checked])
+
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     setVal({
       value: e.currentTarget.value,
@@ -18,10 +25,6 @@ export const Input: React.FC<Props> = ({ setVal, val }) => {
 
   const toggleChecklist = () => {
     setChecked(!checked)
-    setVal({
-      value: val.value,
-      isChecked: !checked
-    })
   }
 
   return (
