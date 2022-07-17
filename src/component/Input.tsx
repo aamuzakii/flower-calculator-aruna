@@ -1,14 +1,14 @@
 // create functional component Input
 
 import React, { useRef, useState } from 'react';
-import { Todo } from '../model/models';
+import { NumberObject } from '../model/models';
 
 interface Props {
-  setVal: React.Dispatch<React.SetStateAction<Todo>>;
-  val: Todo
+  setVal: React.Dispatch<React.SetStateAction<NumberObject>>;
+  val: NumberObject
 }
 
-function toggleTodo(todo: Todo) {
+function toggleTodo(todo: NumberObject) {
   return {
     value : todo.value,
     isChecked: todo.isChecked

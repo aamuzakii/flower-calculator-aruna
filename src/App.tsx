@@ -3,15 +3,15 @@ import './App.css';
 import { Input } from './component/Input';
 import { Operation } from './component/Operation';
 import { Result } from './component/Result';
-import { Todo } from './model/models';
+import { NumberObject } from './model/models';
 
 function App() {
 
-  // const [val, setVal] = React.useState<Array<Todo>>([]);
+  // const [val, setVal] = React.useState<Array<NumberObject>>([]);
 
-  const [first, setfirst] = useState<Todo>({value: '', isChecked: false})
-  const [second, setsecond] = useState<Todo>({value: '', isChecked: false})
-  const [third, setthird] = useState<Todo>({value: '', isChecked: false})
+  const [first, setfirst] = useState<NumberObject>({value: '', isChecked: false})
+  const [second, setsecond] = useState<NumberObject>({value: '', isChecked: false})
+  const [third, setthird] = useState<NumberObject>({value: '', isChecked: false})
   const [result, setResult] = useState<number>(0)
   
 
