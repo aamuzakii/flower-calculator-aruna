@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
-import {Input} from './Input';
-import {Operation} from './Operation';
-import {Result} from './Result';
-import {Todo} from './model/models'
+import { Input } from './component/Input';
+import { Operation } from './component/Operation';
+import { Result } from './component/Result';
+import { Todo } from './model/models';
 
 function App() {
 
@@ -23,7 +22,7 @@ function App() {
 
     const flatten = filtered.map((obj) => parseInt(obj.value))
 
-    if (flatten.length === 1) return setResult(flatten[0])
+    if (flatten.length <= 1) return alert('Please select two numbers')
     result = flatten.reduce(function(accumulator, currentValue) {
       switch (type) {
         case 'sum':

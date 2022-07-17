@@ -1,5 +1,3 @@
-import { Todo } from './model/models'
-
 interface Props {
   startOperation: (type: string) => void;
 }
