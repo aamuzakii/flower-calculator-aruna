@@ -10,13 +10,12 @@ function App() {
 
   // const [val, setVal] = React.useState<Array<Todo>>([]);
 
-  const [first, setfirst] = useState<Todo>({value: 0, isChecked: false})
-  const [second, setsecond] = useState<Todo>({value: 0, isChecked: false})
-  const [third, setthird] = useState<Todo>({value: 0, isChecked: false})
+  const [first, setfirst] = useState<Todo>({value: '', isChecked: false})
+  const [second, setsecond] = useState<Todo>({value: '', isChecked: false})
+  const [third, setthird] = useState<Todo>({value: '', isChecked: false})
   
 
   const startOperation = () => {
-    console.log('as')
     console.log(
       first, second, third
     )

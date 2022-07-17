@@ -25,9 +25,18 @@ export const Input: React.FC<Props> = ({ setVal, val }) => {
   const handleChange = (e: any) => {
     setVal({
       value: e.target.value,
-      isChecked: true
+      isChecked: val.isChecked
     })
   }
+
+  const toggleChecklist = () => {
+    setChecked(!checked)
+    setVal({
+      value: val.value,
+      isChecked: !checked
+    })
+  }
+
 
   return (
     <div style={{ display: 'flex' }} >
@@ -39,7 +48,7 @@ export const Input: React.FC<Props> = ({ setVal, val }) => {
         onChange={handleChange}
       />
 
-      <input type="checkbox" checked={checked} onChange={e => setChecked(e.target.checked)} />
+      <input type="checkbox" checked={checked} onChange={toggleChecklist} />
     </div>
   )
 }
