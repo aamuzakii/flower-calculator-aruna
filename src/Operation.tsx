@@ -1,4 +1,10 @@
-export default function Operation() {
+import { Todo } from './model/models'
+
+interface Props {
+  startOperation: () => void;
+}
+
+export const Operation: React.FC<Props>  = ({ startOperation }) => {
 
   const box = {
     width: '40px',
@@ -6,12 +12,16 @@ export default function Operation() {
     margin: '10px',
   }
 
+  const handleClick = (e: any) => {
+    console.log(e)
+  }
+
   return (
     <div style={{ display: 'flex' }} >
-      <button style={box} >+</button>
-      <button style={box} >-</button>
-      <button style={box} >x</button>
-      <button style={box} >/</button>
+      <button style={box} onClick={startOperation} >+</button>
+      <button style={box} onClick={startOperation} >-</button>
+      <button style={box} onClick={startOperation} >x</button>
+      <button style={box} onClick={startOperation} >/</button>
     </div>
   );
 }

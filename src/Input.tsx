@@ -1,15 +1,44 @@
 // create functional component Input
 
-import React from 'react';
+import React, {useRef}  from 'react';
 import { useState } from 'react';
+import { Todo } from './model/models'
 
-export default function Input() {
-  const [value, setValue] = useState('');
+interface Props {
+  setVal: React.Dispatch<React.SetStateAction<Todo>>;
+  val: Todo
+}
+
+function toggleTodo(todo: Todo) {
+  return {
+    value : todo.value,
+    isChecked: todo.isChecked
+  }
+}
+
+export const Input: React.FC<Props> = ({ setVal, val }) => {
+  // const [value, setValue] = useState('');
   const [checked, setChecked] = useState(false);
+
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const handleChange = (e: any) => {
+    setVal({
+      value: e.target.value,
+      isChecked: true
+    })
+  }
 
   return (
     <div style={{ display: 'flex' }} >
-      <input type="text" value={value} onChange={e => setValue(e.target.value)} />
+      <input
+        type="number"
+        placeholder="Input"
+        value={val.value}
+        ref={inputRef}
+        onChange={handleChange}
+      />
+
       <input type="checkbox" checked={checked} onChange={e => setChecked(e.target.checked)} />
     </div>
   )
