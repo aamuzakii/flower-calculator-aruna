@@ -4,6 +4,7 @@ import { Input } from './component/Input';
 import { Operation } from './component/Operation';
 import { Result } from './component/Result';
 import { NumberInterface } from './interface/NumberInterface';
+import { MathOperation } from './types/MathOperation';
 
 function App() {
 
@@ -13,12 +14,12 @@ function App() {
   const [result, setResult] = useState<number>(0)
   
 
-  const startOperation = (type: string) => {
+  const startOperation = (type: MathOperation) => {
     const arr = [first, second, third]
-    const filtered = arr.filter((obj) => (obj.isChecked))
+    const filteredObjects = arr.filter((obj) => (obj.isChecked))
     let result
 
-    const flatten = filtered.map((obj) => parseInt(obj.value))
+    const flatten = filteredObjects.map((obj) => parseInt(obj.value))
 
     if (flatten.length <= 1) return alert('Please select two numbers')
     result = flatten.reduce(function(accumulator, currentValue) {
