@@ -1,7 +1,7 @@
 import { Todo } from './model/models'
 
 interface Props {
-  startOperation: () => void;
+  startOperation: (type: string) => void;
 }
 
 export const Operation: React.FC<Props>  = ({ startOperation }) => {
@@ -14,10 +14,10 @@ export const Operation: React.FC<Props>  = ({ startOperation }) => {
 
   return (
     <div style={{ display: 'flex' }} >
-      <button style={box} onClick={startOperation} >+</button>
-      <button style={box} onClick={startOperation} >-</button>
-      <button style={box} onClick={startOperation} >x</button>
-      <button style={box} onClick={startOperation} >/</button>
+      <button style={box} onClick={e => startOperation("sum")} >+</button>
+      <button style={box} onClick={e => startOperation("subtract")} >-</button>
+      <button style={box} onClick={e => startOperation("multiply")} >x</button>
+      <button style={box} onClick={e => startOperation("divide")} >/</button>
     </div>
   );
 }

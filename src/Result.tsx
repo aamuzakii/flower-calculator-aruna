@@ -1,8 +1,13 @@
-export default function Result () {
+import React from "react"
+
+interface Props {
+  value: number
+}
+
+export const Result: React.FC<Props> = ({ value }) => {
   return (
-    <div className="result">
-      <p>Hasil</p>
-      <p>15</p>
-    </div>
-  );
+    <>
+      <p>{value}</p>
+    </>
+  )
 }
