@@ -9,11 +9,9 @@ interface Props {
 export const Input: React.FC<Props> = ({ setVal, val }) => {
   const [checked, setChecked] = useState<boolean>(false);
 
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     setVal({
-      value: e.target.value,
+      value: e.currentTarget.value,
       isChecked: val.isChecked
     })
   }
@@ -32,7 +30,6 @@ export const Input: React.FC<Props> = ({ setVal, val }) => {
         type="number"
         placeholder="Input"
         value={val.value}
-        ref={inputRef}
         onChange={handleChange}
         role='number-input'
         className='input'
