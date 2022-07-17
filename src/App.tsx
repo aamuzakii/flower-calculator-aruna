@@ -16,11 +16,12 @@ function App() {
 
   const startOperation = (type: MathOperation) => {
     const arr = [first, second, third]
-    const filteredObjects = arr.filter( obj => obj.isChecked)
+    const filteredObjects: NumberInterface[] = arr.filter( (obj: NumberInterface) => obj.isChecked)
 
-    const flatten = filteredObjects.map( obj => parseInt(obj.value))
+    const flatten: number[] = filteredObjects.map( (obj: NumberInterface) => parseInt(obj.value))
 
     if (flatten.length <= 1) return alert('Please select two numbers')
+    if (flatten.includes(NaN)) return alert('Please fill all checked fields')
     const result = flatten.reduce(function(accumulator, currentValue) {
       switch (type) {
         case 'sum':
