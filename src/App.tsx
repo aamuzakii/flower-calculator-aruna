@@ -20,28 +20,29 @@ function App() {
     const arr = [first, second, third]
     const filtered = arr.filter((obj) => (obj.isChecked))
     let result
-    console.log(filtered)
-    if (filtered.length === 1) return setResult(parseInt(filtered[0].value))
-    result = filtered.reduce(function(accumulator, currentValue) {
+
+    const flatten = filtered.map((obj) => parseInt(obj.value))
+
+    if (flatten.length === 1) return setResult(flatten[0])
+    result = flatten.reduce(function(accumulator, currentValue) {
       switch (type) {
         case 'sum':
-          return accumulator + parseInt(currentValue.value);
+          return accumulator + currentValue;
           break
         case 'subtract':
-          return accumulator - parseInt(currentValue.value);
+          return accumulator - currentValue;
           break
         case 'multiply':
-          return accumulator * parseInt(currentValue.value);
+          return accumulator * currentValue;
           break
         case 'divide':
-          return accumulator / parseInt(currentValue.value);
+          return accumulator / currentValue;
           break
         default:
           return 0;
       }
       
-    }, 0);
-    console.log(result)
+    });
     setResult(result)
   }
 
