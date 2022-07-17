@@ -1,13 +1,13 @@
 import React from "react"
 
 interface Props {
-  value: number
+  value?: number
 }
 
 export const Result: React.FC<Props> = ({ value }) => {
   return (
     <>
-      <p>{value}</p>
+      <p data-testid="result-fragment" >{value}</p>
     </>
   )
 }
