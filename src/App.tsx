@@ -46,7 +46,7 @@ function App() {
   }
 
   return (
-    <div className="App" style={{ margin: '50vh', display: 'flex', flexDirection: 'column' }} >
+    <div className="App" >
       <Input setVal={setfirst} val={first}  />
       <Input setVal={setsecond} val={second}  />
       <Input setVal={setthird} val={third}  />

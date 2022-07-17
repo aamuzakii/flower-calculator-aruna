@@ -44,9 +44,10 @@ export const Input: React.FC<Props> = ({ setVal, val }) => {
         ref={inputRef}
         onChange={handleChange}
         role='number-input'
+        className='input'
       />
 
-      <input type="checkbox" checked={checked} onChange={toggleChecklist} />
+      <input className='checkbox' type="checkbox" checked={checked} onChange={toggleChecklist} />
     </div>
   )
 }
