@@ -43,6 +43,7 @@ export const Input: React.FC<Props> = ({ setVal, val }) => {
         value={val.value}
         ref={inputRef}
         onChange={handleChange}
+        role='number-input'
       />
 
       <input type="checkbox" checked={checked} onChange={toggleChecklist} />
